@@ -1,4 +1,11 @@
 import '../node_modules/normalize.css/normalize.css'
 import './assets/sass/style.sass'
 
-import '../node_modules/jquery/dist/jquery'
+import $ from 'jquery'
+
+$(function () {
+  $('.header__burger').on('click', function () {
+    $(this).toggleClass('active'); 
+    $('.header-menu__wrap').toggleClass('active');
+  });
+});

@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
@@ -35,74 +36,76 @@ module.exports = {
   },
   module: {
     rules: [{
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: '/node_modules/'
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]'
-        }
-      },
-      {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d)?$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]'
-        }
-      },
-      {
-        test: /\.(scss|sass)$/,
-        use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              postcssOptions: {
-                path: './postcss.config.js'
-              }
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true
-            }
-          },
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              postcssOptions: {
-                path: './postcss.config.js'
-              }
+      test: /\.js$/,
+      loader: 'babel-loader',
+      exclude: '/node_modules/'
+    },
+    {
+      test: /\.(png|jpe?g|gif|svg)$/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]'
+        // outputPath: `${PATHS.assets}fonts`
+      }
+    },
+    {
+      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d)?$/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]',
+        outputPath: `${PATHS.assets}fonts`
+      }
+    },
+    {
+      test: /\.(scss|sass)$/,
+      use: [
+        'style-loader',
+        MiniCssExtractPlugin.loader,
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true
+          }
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: true,
+            postcssOptions: {
+              path: './postcss.config.js'
             }
           }
-        ]
-      }
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true
+          }
+        },
+      ]
+    },
+    {
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        MiniCssExtractPlugin.loader,
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true
+          }
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: true,
+            postcssOptions: {
+              path: './postcss.config.js'
+            }
+          }
+        }
+      ]
+    }
     ]
   },
   // resolve: {
@@ -118,22 +121,26 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${PATHS.src}/index.html`,
       filename: './index.html',
-      // inject: false 
+      inject: false 
     }),
     new CopyWebpackPlugin({
       patterns: [{
-          from: `${PATHS.src}/${PATHS.assets}img`,
-          to: `${PATHS.src}img`
-        },
-        {
-          from: `${PATHS.src}/${PATHS.assets}fonts`,
-          to: `${PATHS.assets}fonts`
-        },
-        {
-          from: `${PATHS.src}/static`,
-          to: ''
-        },
+        from: `${PATHS.src}/${PATHS.assets}img`,
+        to: `${PATHS.dist}/${PATHS.assets}img`,
+      },
+      {
+        from: `${PATHS.src}/${PATHS.assets}fonts`,
+        to: `${PATHS.dist}/${PATHS.assets}fonts`
+      },
+      {
+        from: `${PATHS.src}/static`,
+        to: ''
+      },
       ]
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
     })
   ],
 }
