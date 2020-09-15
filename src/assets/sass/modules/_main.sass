@@ -1,23 +1,41 @@
 .main 
   margin-bottom: 40px
+  @media (min-width: $tableWidth)
+    margin-left: 30px
+    margin-bottom: 0
+    grid-column-start: 2
+    grid-row: 1 / 3
   &-block 
     &s 
+      @media (min-width: $phoneWidth)
+        display: flex
+        flex-wrap: wrap
     &__link 
       display: block
       margin-bottom: 28px
+      @media (min-width: $phoneWidth)
+        width: 49%
+        &:not(:nth-child(2n))
+          margin-right: 2% 
+        &:hover 
+          .main
+            &-block
+              &__title 
+                color: $active-color
     &__img 
       position: relative
       width: 100%
       height: 140px
       margin-bottom: 15px
       overflow: hidden 
-      @media (min-width: $phoneWidth)
+      @media (min-width: $smTableWidth)
         height: 200px
       img 
         position: absolute
         top: 50%
         left: 50%
-        min-width: 100%
+        min-width: 100% 
+        min-height: 100%
         transform: translate(-50%, -50%)
         object-fit: cover
         filter: grayscale(100%)
@@ -48,6 +66,7 @@
       font-size: 16px
       line-height: 22px
       color: $text-color_dark
+      transition: color $time
     &__text 
       font-size: 14px
       line-height: 18px
@@ -60,11 +79,20 @@
     align-items: center
     &__prev, &__next
       width: 18px
-      height: 11px
+      height: 15px
       flex-shrink: 0
-      opacity: 0.12
+      opacity: 0.12 
+      pointer-events: none
+      svg
+        transition: fill $time
       &.active 
         opacity: 1  
+        pointer-events: auto 
+        @media (min-width: $tableWidth)
+          &:hover 
+            cursor: pointer
+            svg 
+              fill: $active-color
     &__prev 
       margin-right: 30px
       transform: rotate(90deg)
@@ -81,5 +109,25 @@
       font-size: 18px
       font-weight: 700
       color: $text-color_dark
+      transition: color $time, background-color $time
       &.active 
-        border: 2px solid $active-color
+        border: 2px solid $active-color 
+        pointer-events: none
+    @media (min-width: $tableWidth)  
+      margin: 0
+      &__prev 
+        margin-right: 20px
+      &__next 
+        margin-left: 20px
+      &__item 
+        &:hover 
+          cursor: pointer 
+          color: $text-color_light
+          background-color: $active-color
+  &__bottom
+    @media (min-width: $tableWidth) 
+      display: flex
+      align-items: center
+      justify-content: space-between
+      .btn 
+        margin: 0

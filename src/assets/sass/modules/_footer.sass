@@ -7,38 +7,76 @@
   color: $text-color_light
   background-color: $bg-color_dark
   &__top 
+    @media (min-width: $tableWidth)
+      display: flex
+      justify-content: space-between 
+      align-items: flex-start
+      .search 
+        width: 70% 
+  &__content
+    text-align: center
+    @media (min-width: $tableWidth)
+      display: flex
+      // justify-content: space-between
+      text-align: left
   &__logo 
     width: 100%
     margin-bottom: 20px
     img 
       width: 100% 
+    @media (min-width: $tableWidth)
+      width: 25%
+      margin-right: 5%
+      margin-bottom: 0
+      max-width: 240px
   &__info 
+    @media (min-width: $tableWidth)
+      width: 70%
+      display: flex
+      justify-content: space-between
     &-main 
-      // max-width: 270px
       margin: 0 auto 30px
-      text-align: center
       span 
         font-weight: 700
+      @media (min-width: $tableWidth)
+        width: 25%
+        margin: 0
+        margin-right: 5%
     &-dop 
-      // width: 270px
-      margin: 0 auto 30px
-      text-align: center 
+      margin: 0 auto 30px 
+      @media (min-width: $tableWidth)
+        max-width: 165px 
+        margin: 0
   &-contacts
-    // width: 270px
     margin: 0 auto 30px
-    text-align: center
     &__name 
       font-weight: 700
     &__link 
       white-space: nowrap
       color: inherit 
+      @media (min-width: $tableWidth)
+        &:hover 
+          cursor: pointer 
+          color: $active-color
     .social 
       margin-top: 30px
+    @media (min-width: $tableWidth)
+      max-width: 221px
+      margin: 0
+      .social 
+        margin-top: 10px
+        justify-content: flex-start
   &-menu 
     display: none
     &__item 
       display: block
       font-size: 18px
+      line-height: 18px
       color: inherit
       &:not(:last-child)
         margin-bottom: 15px
+      @media (min-width: $tableWidth)
+        &:hover 
+          color: $active-color
+    @media (min-width: $tableWidth)
+      display: block

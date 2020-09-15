@@ -8,41 +8,39 @@
 
 body 
   font-family: $fontMain
+  color: $text-color
 
 .container 
   width: 100%
+  max-width: 1140px
+  margin: 0 auto
   padding: 0 15px 
 
 .page 
   padding-top: 10px
-  padding-bottom: 40px
+  padding-bottom: 40px 
+  @media (min-width: $tableWidth)
+    padding-top: 40px
+    display: grid
+    grid-template-columns: 25% 75%
+    grid-template-rows: 680px 860px
+  @media (min-width: $desktopWidth)
+    grid-template-rows: 680px 780px
+  &_text 
+    padding-top: 10px
+    padding-bottom: 40px 
+    @media (min-width: $tableWidth)
+      padding-top: 40px
 
-// img 
-//   max-width: 100%
+img 
+  max-width: 100%
 
 svg 
-  // max-width: 100%
+  max-width: 100%
   max-height: 100%
-  &:not(#arrow):not(#arrow_small)
-    fill: $text-color_light
 
-#arrow
-  fill: $active-color
-
-#arrow_small
-  fill: $text-color_dark
-  
-#instagram 
-  width: 20px
-  height: 20px
-
-#telegram 
-  width: 20px
-  height: 18px
-
-#vk 
-  width: 31px
-  height: 18px
+.svg-icons 
+  display: none
 
 input 
   border: none
@@ -50,7 +48,7 @@ input
   outline: none 
 
 a 
-  text-decoration: none
+  text-decoration: none 
 
 .search  
   margin-bottom: 20px
@@ -62,7 +60,9 @@ a
     left: 0
     width: 15px
     height: 15px 
-    transform: translate(0, -50%)
+    transform: translate(0, -50%) 
+    svg 
+      fill: $text-color_light
   &__input 
     width: 100%
     padding: 7px 24px
@@ -73,16 +73,63 @@ a
       color: rgba(#9c9c9c, 0.35) 
     &:focus
       border-color: $active-color 
+  &__btn 
+    svg 
+      fill: $text-color_light
+      transition: fill $time
+    @media (min-width: $tableWidth)
+      &:hover
+        cursor: pointer
+        svg
+          fill: $active-color
+  &__close 
+    position: absolute
+    top: 50%
+    right: 5px
+    width: 20px
+    height: 20px
+    // display: none
+    display: flex 
+    justify-content: center
+    align-items: center
+    transform: translate(0, -50%) 
+    &::before, &::after
+      content: '' 
+      position: absolute 
+      width: 100% 
+      height: 2px 
+      display: block
+      background-color: $text-color_light
+      transition: background-color $time
+    &::before
+      transform: rotate(45deg)
+    &::after
+      transform: rotate(-45deg)
+    @media (min-width: $tableWidth)
+      &:hover
+        cursor: pointer
+        &::before, &::after
+          background-color: $active-color
 
 .social 
   display: flex 
   justify-content: center
   align-items: center
   &__item 
-    min-width: 22px
-    max-height: 20px
+    width: 22px
+    height: 20px
     margin: 0 10px
-    display: block
+    display: block $time
+    svg 
+      fill: $text-color_light
+      transition: fill $time
+    @media (min-width: $tableWidth) 
+      width: 15px
+      height: 15px
+      margin: 0 5px 
+      &:hover 
+        svg 
+          fill: $active-color
 
 .section  
   &__title 
@@ -102,6 +149,11 @@ a
     line-height: 16px
     font-weight: 600
     color: $active-color
+    transition: color $time
+    @media (min-width: $tableWidth)
+      &:hover 
+        cursor: pointer
+        color: $text-color
 
 .btn 
   width: 290px
@@ -116,7 +168,9 @@ a
   // text-align: center
   text-transform: uppercase
   color: $text-color
+  background-color: transparent
   border: 2px solid $active-color
+  transition: color $time, background-color $time
   &-up 
     width: 58px
     height: 58px
@@ -126,9 +180,32 @@ a
     align-items: center
     border-radius: 50%
     border: 2px solid #ffffff 
-    object
-      width: 30px
-      height: 23px  
+    background-color: $bg-color_dark
+    transition: border-color $time, background-color $time, opacity $time, visibility $time
+    svg
+      width: 35px 
+      height: 28px
+      fill: $active-color
+    @media (min-width: $tableWidth)
+      opacity: 0 
+      visibility: hidden
+      &.active 
+        opacity: 1
+        visibility: visible
+  @media (min-width: $tableWidth)
+    width: 165px
+    &:hover 
+      cursor: pointer
+      color: $text-color_light
+      background-color: $active-color  
+    &-up 
+      position: fixed
+      bottom: 50px
+      right: 50px
+      &:hover
+        cursor: pointer
+        border-color: $active-color 
+        background-color: $bg-color_light
 
 @import 'modules/header'
 @import 'modules/news'
@@ -136,3 +213,9 @@ a
 @import 'modules/main'
 @import 'modules/detail'
 @import 'modules/footer'
+
+.nicescroll-rails
+  width: 1px !important
+
+.nicescroll-cursors 
+  transform: translate(2px, 0)

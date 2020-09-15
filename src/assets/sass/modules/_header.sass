@@ -10,11 +10,15 @@
     flex-wrap: wrap
     justify-content: space-between
     align-items: center
+    @media (min-width: $tableWidth) 
+      flex-wrap: nowrap
   &__logo
     max-width: 196px
     max-height: 30px
     img 
       max-height: 100%  
+    @media (min-width: $tableWidth) 
+      max-width: 200px
   &__burger 
     position: relative
     width: 40px
@@ -22,13 +26,13 @@
     display: flex
     flex-direction: column
     justify-content: space-between
-    align-items: center
+    align-items: center 
     span, &::before, &::after
       width: 100% 
       height: 3px 
       display: block
       background-color: $text-color_light
-      transition: transform 0.6s
+      transition: transform $time
     &::before, &::after
       content: '' 
     &.active 
@@ -41,10 +45,25 @@
         transform: rotate(45deg)
       &::after
         transform: rotate(-45deg)
+    @media (min-width: $tableWidth)
+      display: none
   &-menu 
     margin: 0
     padding: 0
-    list-style: none
+    list-style: none 
+    .search__btn 
+      display: none
+    @media (min-width: $tableWidth) 
+      display: none
+      padding: 0 3px
+      display: flex 
+      justify-content: space-between
+      align-items: center
+      border-bottom: 2px solid rgba($text-color_light, 0.4)
+      .search__btn 
+        display: block
+        width: 20px
+        height: 20px
     &__wrap 
       position: absolute
       top: 0
@@ -54,13 +73,62 @@
       background-color: $bg-color_dark
       opacity: 0
       visibility: hidden
-      transition: opacity 0.6s, top 0.6s, visibility 0.6s 
+      transition: opacity $time, top $time, visibility $time 
       &.active 
         top: 100%
         opacity: 1
         visibility: visible
+      @media (min-width: $tableWidth) 
+        position: relative
+        width: 65%
+        margin: 0 55px
+        padding: 0
+        opacity: 1
+        visibility: visible 
+        overflow: hidden
+        .search 
+          position: absolute 
+          top: 50%
+          right: -100%
+          z-index: 10
+          width: calc(100% + 10px)
+          margin-bottom: 0
+          padding: 5px
+          // display: none 
+          background-color: $bg-color_dark
+          transform: translate(50%, -50%)
+          visibility: hidden
+          transition: right $time, visibility $time
+          &__icon 
+            left: 5px
+            width: 20px
+            height: 20px
+          &__input 
+            padding: 10px 33px
+            font-size: 18px
+            border-width: 2px
+          &.active 
+            visibility: visible
+            right: 50%
     &__item 
-      padding: 10px 0
+      position: relative
+      padding: 10px 0 
+      transition: color $time
+      @media (min-width: $tableWidth) 
+        &:hover 
+          cursor: pointer
+          color: $active-color
+        &.active 
+          pointer-events: none
+          &::before 
+            content: ''
+            position: absolute 
+            bottom: -3px 
+            left: 0 
+            display: block
+            width: 100%
+            height: 5px
+            background-color: $active-color
     &__link 
       display: block
       font-size: 18px
@@ -68,3 +136,5 @@
       color: inherit 
   .social 
     display: none
+    @media (min-width: $tableWidth) 
+      display: flex

@@ -1,10 +1,21 @@
 .rating 
+  &__blocks 
+    max-height: calc(100% - 80px)
+    overflow-y: auto
   &__link 
+    margin-right: 5px
+    padding-right: 5px
     padding-bottom: 18px
     display: block
+    color: $text-color_dark 
+    transition: color $time
     &:not(:last-child)
       margin-bottom: 18px
       border-bottom: 1px solid rgba(#232222, 0.05)
+    @media (min-width: $tableWidth)
+      &:hover 
+        cursor: pointer
+        color: $active-color
   &__item 
     display: flex
   &__img 
@@ -18,6 +29,7 @@
       position: absolute
       top: 50%
       left: 50%
+      max-width: none
       transform: translate(-50%, -50%)
       object-fit: cover 
       filter: grayscale(100%)
@@ -26,4 +38,3 @@
     font-size: 14px
     font-weight: 600
     line-height: 18px
-    color: $text-color_dark 
