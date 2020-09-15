@@ -1,0 +1,29 @@
+.rating 
+  &__link 
+    padding-bottom: 18px
+    display: block
+    &:not(:last-child)
+      margin-bottom: 18px
+      border-bottom: 1px solid rgba(#232222, 0.05)
+  &__item 
+    display: flex
+  &__img 
+    position: relative
+    width: 85px
+    height: 85px 
+    margin-right: 13px 
+    flex-shrink: 0
+    overflow: hidden
+    img 
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      object-fit: cover 
+      filter: grayscale(100%)
+  &__title 
+    margin: 0
+    font-size: 14px
+    font-weight: 600
+    line-height: 18px
+    color: $text-color_dark 

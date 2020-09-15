@@ -1,0 +1,25 @@
+.news
+  &__blocks 
+    margin-bottom: 40px
+  &__link 
+    display: block
+    &:not(:last-child)
+      margin-bottom: 20px
+    &:not(:first-child):not(:nth-child(2)):not(:nth-child(3))
+      display: none
+  &__item 
+    font-size: 14px
+    font-weight: 500
+  &__date 
+    margin-bottom: 10px
+    display: block
+    font-weight: 700
+    color: $text-color_dark
+    span 
+      font-weight: 500
+      color: $text-color_light2 
+  &__title 
+    margin: 0
+    font-weight: 500
+    line-height: 20px
+    color: $text-color 

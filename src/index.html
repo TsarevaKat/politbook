@@ -1,14 +1,673 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Politbook</title>
+  <link rel="stylesheet" href="./assets/css/vendors.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
 </head>
+
 <body>
   <header class="header">
-    (.header__logo>img)+.header__burger+nav.header-menu>a.header-menu__item
+    <div class="header__content container">
+      <div class="header__logo"><img src="./assets/img/logo.png" alt=""></div>
+      <!-- /.header__logo -->
+      <div class="header__burger">
+        <span></span>
+      </div>
+      <!-- /.header__burger -->
+      <nav class="header-menu__wrap" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <form action="#" class="search">
+          <div class="search__icon">
+            <object data="./assets/img/search.svg" type="image/svg+xml"></object>
+          </div>
+          <!-- /.search__icon -->
+          <input type="text" class="search__input" placeholder="Поиск">
+        </form>
+        <!-- /.search -->
+        <ul class="header-menu" itemscope itemtype="http://schema.org/ItemList">
+          <li class="header-menu__item" itemprop="itemListElement">
+            <a href="#" class="header-menu__link" itemprop="url">
+              Новости
+            </a>
+            <!-- /.header-menu__link -->
+          </li>
+          <!-- /.header-menu__item -->
+
+          <li class="header-menu__item" itemprop="itemListElement">
+            <a href="#" class="header-menu__link" itemprop="url">
+              Аналитика
+            </a>
+            <!-- /.header-menu__link -->
+          </li>
+          <!-- /.header-menu__item -->
+
+          <li class="header-menu__item" itemprop="itemListElement">
+            <a href="#" class="header-menu__link" itemprop="url">
+              Тренды
+            </a>
+            <!-- /.header-menu__link -->
+          </li>
+          <!-- /.header-menu__item -->
+
+          <li class="header-menu__item" itemprop="itemListElement">
+            <a href="#" class="header-menu__link" itemprop="url">
+              Рейтинги
+            </a>
+            <!-- /.header-menu__link -->
+          </li>
+          <!-- /.header-menu__item -->
+
+          <li class="header-menu__item" itemprop="itemListElement">
+            <a href="#" class="header-menu__link" itemprop="url">
+              О сайте
+            </a>
+            <!-- /.header-menu__link -->
+          </li>
+          <!-- /.header-menu__item -->
+        </ul>
+        <!-- /.header-menu -->
+      </nav>
+      <!-- /.header-menu__wrap -->
+      <div class="social">
+        <a href="#" class="social__item">
+          <object data="./assets/img/instagram.svg" type="image/svg+xml"></object>
+        </a>
+        <!-- /.social__item -->
+        <a href="/" class="social__item">
+          <object data="./assets/img/telegram.svg" type="image/svg+xml"></object>
+        </a>
+        <!-- /.social__item -->
+        <a href="/" class="social__item">
+          <object data="./assets/img/vk.svg" type="image/svg+xml"></object>
+        </a>
+        <!-- /.social__item -->
+        <a href="/" class="social__item">
+          <object data="./assets/img/youtube.svg" type="image/svg+xml"></object>
+        </a>
+        <!-- /.social__item -->
+        <a href="/" class="social__item">
+          <object data="./assets/img/facebook.svg" type="image/svg+xml"></object>
+        </a>
+        <!-- /.social__item -->
+      </div>
+      <!-- /.social -->
+    </div>
+    <!-- /.container -->
   </header>
   <!-- /.header -->
+
+  <div class="container page">
+    <aside class="news">
+      <h2 class="section__title">
+        Новости
+        <a href="#" class="section__link">
+          Все новости
+        </a>
+        <!-- /.section__link -->
+      </h2>
+      <!-- /.section__title -->
+
+      <div class="news__blocks">
+        <a href="#" class="news__link">
+          <article class="news__item">
+            <time class="news__date">
+              13:07<span> - Сегодня</span>
+            </time>
+            <!-- /.news__date -->
+            <h4 class="news__title">
+              Стартовал цикл онлайн-публикаций «Добролюбовские места Нижнего Новгорода»
+            </h4>
+            <!-- /.news__title -->
+          </article>
+          <!-- /.news__item -->
+        </a>
+        <!-- /.news__link -->
+
+        <a href="#" class="news__link">
+          <article class="news__item">
+            <time class="news__date">
+              12:39<span> - Сегодня</span>
+            </time>
+            <!-- /.news__date -->
+            <h4 class="news__title">
+              На вокзалах ГЖД продолжаются профилактические мероприятия
+            </h4>
+            <!-- /.news__title -->
+          </article>
+          <!-- /.news__item -->
+        </a>
+        <!-- /.news__link -->
+
+        <a href="#" class="news__link">
+          <article class="news__item">
+            <time class="news__date">
+              10:55<span> - Сегодня</span>
+            </time>
+            <!-- /.news__date -->
+            <h4 class="news__title">
+              Основам экспортной деятельности научат нижегородских предпринимателей
+            </h4>
+            <!-- /.news__title -->
+          </article>
+          <!-- /.news__item -->
+        </a>
+        <!-- /.news__link -->
+
+        <a href="#" class="news__link">
+          <article class="news__item">
+            <time class="news__date">
+              09:35<span> - Сегодня</span>
+            </time>
+            <!-- /.news__date -->
+            <h4 class="news__title">
+              Международный фестиваль «Вазари» откроется в Арсенале 18 сентябр
+            </h4>
+            <!-- /.news__title -->
+          </article>
+          <!-- /.news__item -->
+        </a>
+        <!-- /.news__link -->
+
+        <a href="#" class="news__link">
+          <article class="news__item">
+            <time class="news__date">
+              Вчера
+            </time>
+            <!-- /.news__date -->
+            <h4 class="news__title">
+              Губернатор возложил цветы к памятнику основателям Нижнего Новгорода
+            </h4>
+            <!-- /.news__title -->
+          </article>
+          <!-- /.news__item -->
+        </a>
+        <!-- /.news__link -->
+
+        <a href="#" class="news__link">
+          <article class="news__item">
+            <time class="news__date">
+              Вчера
+            </time>
+            <!-- /.news__date -->
+            <h4 class="news__title">
+              Глава региона Глеб Никитин проверил ход благоустройства сквера у памятника Свердлову
+            </h4>
+            <!-- /.news__title -->
+          </article>
+          <!-- /.news__item -->
+        </a>
+        <!-- /.news__link -->
+
+        <a href="#" class="news__link">
+          <article class="news__item">
+            <time class="news__date">
+              Вчера
+            </time>
+            <!-- /.news__date -->
+            <h4 class="news__title">
+              Дожди и грозы
+            </h4>
+            <!-- /.news__title -->
+          </article>
+          <!-- /.news__item -->
+        </a>
+        <!-- /.news__link -->
+
+        <a href="#" class="news__link">
+          <article class="news__item">
+            <time class="news__date">
+              Вчера
+            </time>
+            <!-- /.news__date -->
+            <h4 class="news__title">
+              Глава региона Глеб Никитин проверил ход благоустройства сквера у памятника Свердлову
+            </h4>
+            <!-- /.news__title -->
+          </article>
+          <!-- /.news__item -->
+        </a>
+        <!-- /.news__link -->
+        <div class="btn">
+          еще
+        </div>
+      </div>
+      <!-- /.news__blocks -->
+    </aside>
+    <!-- /.news -->
+
+    <main class="main">
+      <h1 class="section__title">
+        Аналитика
+      </h1>
+      <!-- /.section__title -->
+      <div class="main-blocks">
+        <a href="#" class="main-block__link">
+          <article class="main-block">
+            <div class="main-block__img">
+              <div class="main-block__flags">
+                <div class="main-block__flag_exclusive">
+                  ЭКСКЛЮЗИВ
+                </div>
+                <!-- /.main-block__flag -->
+              </div>
+              <!-- /.main-block__flags -->
+              <img src="./assets/img/analitic-1.jpg" alt="">
+            </div>
+            <!-- /.main-block__img -->
+            <time class="main-block__date">
+              17 АВГУСТА 2020
+            </time>
+            <!-- /.main-block__date -->
+            <h3 class="main-block__title">
+              Леонид Большухин: «Дистанционное образование может рассматриваться как вспомогательная форма, но ни в коем
+              случае как доминирующая»
+            </h3>
+            <!-- /.main-block__title -->
+            <div class="main-block__text">
+              Профессор Высшей школы экономики поделился с «PolitBook» своим опытом дистанционного преподавания и
+              аргументировал точку зрения, почему такую форму нельзя вводить как основную в образовательном процессе.
+            </div>
+            <!-- /.main-block__text -->
+          </article>
+          <!-- /.main-block -->
+        </a>
+        <!-- /.main-block__link -->
+
+        <a href="#" class="main-block__link">
+          <article class="main-block">
+            <div class="main-block__img">
+              <div class="main-block__flags">
+              </div>
+              <!-- /.main-block__flags -->
+              <img src="./assets/img/analitic-2.jpg" alt="">
+            </div>
+            <!-- /.main-block__img -->
+            <time class="main-block__date">
+              17 АВГУСТА 2020
+            </time>
+            <!-- /.main-block__date -->
+            <h3 class="main-block__title">
+              Леонид Большухин: «Дистанционное образование может рассматриваться как вспомогательная форма, но ни в коем
+              случае как доминирующая»
+            </h3>
+            <!-- /.main-block__title -->
+            <div class="main-block__text">
+              Профессор Высшей школы экономики поделился с «PolitBook» своим опытом дистанционного преподавания и
+              аргументировал точку зрения, почему такую форму нельзя вводить как основную в образовательном процессе.
+            </div>
+            <!-- /.main-block__text -->
+          </article>
+          <!-- /.main-block -->
+        </a>
+        <!-- /.main-block__link -->
+
+        <a href="#" class="main-block__link">
+          <article class="main-block">
+            <div class="main-block__img">
+              <div class="main-block__flags">
+              </div>
+              <!-- /.main-block__flags -->
+              <img src="./assets/img/analitic-3.jpg" alt="">
+            </div>
+            <!-- /.main-block__img -->
+            <time class="main-block__date">
+              17 АВГУСТА 2020
+            </time>
+            <!-- /.main-block__date -->
+            <h3 class="main-block__title">
+              Леонид Большухин: «Дистанционное образование может рассматриваться как вспомогательная форма, но ни в коем
+              случае как доминирующая»
+            </h3>
+            <!-- /.main-block__title -->
+            <div class="main-block__text">
+              Профессор Высшей школы экономики поделился с «PolitBook» своим опытом дистанционного преподавания и
+              аргументировал точку зрения, почему такую форму нельзя вводить как основную в образовательном процессе.
+            </div>
+            <!-- /.main-block__text -->
+          </article>
+          <!-- /.main-block -->
+        </a>
+        <!-- /.main-block__link -->
+
+        <a href="#" class="main-block__link">
+          <article class="main-block">
+            <div class="main-block__img">
+              <div class="main-block__flags">
+                <div class="main-block__flag_exclusive">
+                  ЭКСКЛЮЗИВ
+                </div>
+                <!-- /.main-block__flag -->
+              </div>
+              <!-- /.main-block__flags -->
+              <img src="./assets/img/analitic-4.jpg" alt="">
+            </div>
+            <!-- /.main-block__img -->
+            <time class="main-block__date">
+              17 АВГУСТА 2020
+            </time>
+            <!-- /.main-block__date -->
+            <h3 class="main-block__title">
+              Леонид Большухин: «Дистанционное образование может рассматриваться как вспомогательная форма, но ни в коем
+              случае как доминирующая»
+            </h3>
+            <!-- /.main-block__title -->
+            <div class="main-block__text">
+              Профессор Высшей школы экономики поделился с «PolitBook» своим опытом дистанционного преподавания и
+              аргументировал точку зрения, почему такую форму нельзя вводить как основную в образовательном процессе.
+            </div>
+            <!-- /.main-block__text -->
+          </article>
+          <!-- /.main-block -->
+        </a>
+        <!-- /.main-block__link -->
+
+        <a href="#" class="main-block__link">
+          <article class="main-block">
+            <div class="main-block__img">
+              <div class="main-block__flags">
+              </div>
+              <!-- /.main-block__flags -->
+              <img src="./assets/img/analitic-5.jpg" alt="">
+            </div>
+            <!-- /.main-block__img -->
+            <time class="main-block__date">
+              17 АВГУСТА 2020
+            </time>
+            <!-- /.main-block__date -->
+            <h3 class="main-block__title">
+              Леонид Большухин: «Дистанционное образование может рассматриваться как вспомогательная форма, но ни в коем
+              случае как доминирующая»
+            </h3>
+            <!-- /.main-block__title -->
+            <div class="main-block__text">
+              Профессор Высшей школы экономики поделился с «PolitBook» своим опытом дистанционного преподавания и
+              аргументировал точку зрения, почему такую форму нельзя вводить как основную в образовательном процессе.
+            </div>
+            <!-- /.main-block__text -->
+          </article>
+          <!-- /.main-block -->
+        </a>
+        <!-- /.main-block__link -->
+
+        <a href="#" class="main-block__link">
+          <article class="main-block">
+            <div class="main-block__img">
+              <div class="main-block__flags">
+              </div>
+              <!-- /.main-block__flags -->
+              <img src="https://avatars.mds.yandex.net/get-pdb/1641895/604970ca-f82b-4bb9-b6bb-3aed251e3083/s375"
+                alt="">
+            </div>
+            <!-- /.main-block__img -->
+            <time class="main-block__date">
+              17 АВГУСТА 2020
+            </time>
+            <!-- /.main-block__date -->
+            <h3 class="main-block__title">
+              Леонид Большухин: «Дистанционное образование может рассматриваться как вспомогательная форма, но ни в коем
+              случае как доминирующая»
+            </h3>
+            <!-- /.main-block__title -->
+            <div class="main-block__text">
+              Профессор Высшей школы экономики поделился с «PolitBook» своим опытом дистанционного преподавания и
+              аргументировал точку зрения, почему такую форму нельзя вводить как основную в образовательном процессе.
+            </div>
+            <!-- /.main-block__text -->
+          </article>
+          <!-- /.main-block -->
+        </a>
+        <!-- /.main-block__link -->
+      </div>
+      <!-- /.main-blocks -->
+      <div class="main-pagination">
+        <div class="main-pagination__prev">
+          <object data="./assets/img/arrow_small.svg" type="image/svg+xml"></object>
+        </div>
+        <!-- /.main-pagination__prev -->
+        <div class="main-pagination__item active">1</div>
+        <!-- /.main-pagination__item -->
+        <div class="main-pagination__item">2</div>
+        <!-- /.main-pagination__item -->
+        <div class="main-pagination__item">3</div>
+        <!-- /.main-pagination__item -->
+        <div class="main-pagination__next active">
+          <object data="./assets/img/arrow_small.svg" type="image/svg+xml"></object>
+        </div>
+        <!-- /.main-pagination__next -->
+      </div>
+      <!-- /.main-pagination -->
+      <a href="#" class="btn">
+        Все статьи
+      </a>
+    </main>
+    <!-- /.main -->
+
+    <aside class="rating">
+      <h2 class="section__title">
+        Рейтинги
+        <a href="#" class="section__link">
+          Все рейтинги
+        </a>
+        <!-- /.section__link -->
+      </h2>
+      <!-- /.section__title -->
+
+      <div class="rating__blocks">
+        <a href="#" class="rating__link">
+          <article class="rating__item">
+            <div class="rating__img"><img src="./assets/img/rating-1.jpg" alt="фото"></div>
+            <!-- /.rating__img -->
+            <h4 class="rating__title">
+              Топ-5 внешних проблем России. Эксперты озвучили, какие трудности ожидают страну извне
+            </h4>
+            <!-- /.rating__title -->
+          </article>
+          <!-- /.rating__item -->
+        </a>
+        <!-- /.rating__link -->
+
+        <a href="#" class="rating__link">
+          <article class="rating__item">
+            <div class="rating__img"><img src="./assets/img/rating-2.jpg" alt="фото"></div>
+            <!-- /.rating__img -->
+            <h4 class="rating__title">
+              Персоны недели в Нижнем Новгороде
+            </h4>
+            <!-- /.rating__title -->
+          </article>
+          <!-- /.rating__item -->
+        </a>
+        <!-- /.rating__link -->
+
+        <a href="#" class="rating__link">
+          <article class="rating__item">
+            <div class="rating__img"><img src="./assets/img/rating-3.jpg" alt="фото"></div>
+            <!-- /.rating__img -->
+            <h4 class="rating__title">
+              Рейтинг общественной активности с 19 по 26 ноября
+            </h4>
+            <!-- /.rating__title -->
+          </article>
+          <!-- /.rating__item -->
+        </a>
+        <!-- /.rating__link -->
+
+        <a href="#" class="rating__link">
+          <article class="rating__item">
+            <div class="rating__img"><img src="./assets/img/rating-4.jpg" alt="фото"></div>
+            <!-- /.rating__img -->
+            <h4 class="rating__title">
+              Топ-5 внешних проблем России. Эксперты озвучили, какие трудности ожидают страну извне
+            </h4>
+            <!-- /.rating__title -->
+          </article>
+          <!-- /.rating__item -->
+        </a>
+        <!-- /.rating__link -->
+
+        <a href="#" class="rating__link">
+          <article class="rating__item">
+            <div class="rating__img"><img src="./assets/img/rating-1.jpg" alt="фото"></div>
+            <!-- /.rating__img -->
+            <h4 class="rating__title">
+              Карта побед и поражений недели (с 22 по 28 июня)
+            </h4>
+            <!-- /.rating__title -->
+          </article>
+          <!-- /.rating__item -->
+        </a>
+        <!-- /.rating__link -->
+
+        <a href="#" class="rating__link">
+          <article class="rating__item">
+            <div class="rating__img"><img
+                src="https://avatars.mds.yandex.net/get-pdb/1641895/604970ca-f82b-4bb9-b6bb-3aed251e3083/s375"
+                alt="фото"></div>
+            <!-- /.rating__img -->
+            <h4 class="rating__title">
+              Плюсы и минусы прошедшей недели (с 15 по 21 июня)
+            </h4>
+            <!-- /.rating__title -->
+          </article>
+          <!-- /.rating__item -->
+        </a>
+        <!-- /.rating__link -->
+      </div>
+      <!-- /.rating__blocks -->
+    </aside>
+    <!-- /.rating -->
+  </div>
+  <!-- /.container page -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__logo">
+          <img src="./assets/img/logo.png" alt="">
+        </div>
+        <!-- /.footer__logo -->
+        <form action="#" class="search">
+          <div class="search__icon">
+            <object data="./assets/img/search.svg" type="image/svg+xml"></object>
+          </div>
+          <!-- /.search__icon -->
+          <input type="text" class="search__input" placeholder="Поиск">
+        </form>
+        <!-- /.search -->
+      </div>
+      <!-- /.footer__top -->
+      <div class="footer__content">
+        <div class="footer__info-main">
+          Ежедневно обновляемое СМИ - сетевое издание "PolitBook". <br> 
+          <span>Учредители СМИ</span> : ООО ИАА "ПолитБук" и Климова Е.И.<br>
+          <span>Главный редактор</span> - Климова Е.И.
+        </div>
+        <!-- /.footer__info-main -->
+        <div class="footer-contacts">
+          <div class="footer-contacts__item">
+            <span class="footer-contacts__name">
+              Адрес:
+            </span>
+            <!-- /.footer-contacts__name -->
+            <span class="footer-contacts__value">
+              603163 г. Нижний Новгород, Казанское ш., д. 6,
+            </span>
+            <!-- /.footer-contacts__value -->
+          </div>
+          <!-- /.footer-contacts__item -->
+
+          <div class="footer-contacts__item">
+            <span class="footer-contacts__name">
+              Телефон:
+            </span>
+            <!-- /.footer-contacts__name -->
+            <a href="tel:88314130398" class="footer-contacts__link">
+              8 (831) 413-03-98
+            </a>
+            <!-- /.footer-contacts__link -->
+          </div>
+          <!-- /.footer-contacts__item -->
+
+          <div class="footer-contacts__item">
+            <span class="footer-contacts__name">
+              Почта: 
+            </span>
+            <!-- /.footer-contacts__name -->
+            <a href="mailto:politbookinfo@mail.ru" class="footer-contacts__link">
+              politbookinfo@mail.ru
+            </a>
+            <!-- /.footer-contacts__link -->
+          </div>
+          <!-- /.footer-contacts__item -->
+          <div class="social">
+            <a href="#" class="social__item">
+              <object data="./assets/img/instagram.svg" type="image/svg+xml"></object>
+            </a>
+            <!-- /.social__item -->
+            <a href="/" class="social__item">
+              <object data="./assets/img/telegram.svg" type="image/svg+xml"></object>
+            </a>
+            <!-- /.social__item -->
+            <a href="/" class="social__item">
+              <object data="./assets/img/vk.svg" type="image/svg+xml"></object>
+            </a>
+            <!-- /.social__item -->
+            <a href="/" class="social__item">
+              <object data="./assets/img/youtube.svg" type="image/svg+xml"></object>
+            </a>
+            <!-- /.social__item -->
+            <a href="/" class="social__item">
+              <object data="./assets/img/facebook.svg" type="image/svg+xml"></object>
+            </a>
+            <!-- /.social__item -->
+          </div>
+          <!-- /.social -->
+        </div>
+        <!-- /.footer__contacts -->
+
+        <div class="footer-menu">
+          <a href="#" class="footer-menu__item">
+            Новости           
+          </a> 
+          <!-- /.footer-menu__item -->
+          <a href="#" class="footer-menu__item">
+            Аналитика            
+          </a> 
+          <!-- /.footer-menu__item -->
+          <a href="#" class="footer-menu__item">
+            Тренды            
+          </a> 
+          <!-- /.footer-menu__item -->
+          <a href="#" class="footer-menu__item">
+            Рейтинги            
+          </a> 
+          <!-- /.footer-menu__item -->
+          <a href="#" class="footer-menu__item">
+            О сайте
+          </a> 
+          <!-- /.footer-menu__item -->
+        </div>
+        <!-- /.footer__menu -->
+        <div class="footer__info-dop">
+          16+ Выписка из реестра зарегистрированных СМИ ЭЛ ФС 77-73-386 выдана Роскомнадзором
+        </div>
+        <!-- /.footer__info-dop -->
+      </div>
+      <!-- /.footer__content -->
+      <div class="btn-up">
+        <object data="./assets/img/arrow.svg" type="image/svg+xml"></object>
+      </div>
+      <!-- /.btn-up -->
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- /.footer -->
+
+  <script src="./assets/js/vendors.js"></script>
+  <script src="./assets/js/main.js"></script>
 </body>
+
 </html>

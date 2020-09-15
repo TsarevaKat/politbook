@@ -3,8 +3,132 @@
 @import 'utils/mixins'
 @import 'utils/fonts'
 
+*
+  box-sizing: border-box
+
 body 
   font-family: $fontMain
+
+.container 
+  width: 100%
+  padding: 0 15px 
+
+.page 
+  padding-top: 10px
+  padding-bottom: 40px
+
+// img 
+//   max-width: 100%
+
+svg 
+  // max-width: 100%
+  max-height: 100%
+  &:not(#arrow):not(#arrow_small)
+    fill: $text-color_light
+
+#arrow
+  fill: $active-color
+
+#arrow_small
+  fill: $text-color_dark
+  
+#instagram 
+  width: 20px
+  height: 20px
+
+#telegram 
+  width: 20px
+  height: 18px
+
+#vk 
+  width: 31px
+  height: 18px
+
+input 
+  border: none
+  border-radius: none
+  outline: none 
+
+a 
+  text-decoration: none
+
+.search  
+  margin-bottom: 20px
+  position: relative
+  display: flex
+  &__icon
+    position: absolute
+    top: 50% 
+    left: 0
+    width: 15px
+    height: 15px 
+    transform: translate(0, -50%)
+  &__input 
+    width: 100%
+    padding: 7px 24px
+    color: inherit
+    border-bottom: 1px solid rgba($text-color_light, 0.4)
+    background-color: transparent
+    &::placeholder 
+      color: rgba(#9c9c9c, 0.35) 
+    &:focus
+      border-color: $active-color 
+
+.social 
+  display: flex 
+  justify-content: center
+  align-items: center
+  &__item 
+    min-width: 22px
+    max-height: 20px
+    margin: 0 10px
+    display: block
+
+.section  
+  &__title 
+    margin-top: 0 
+    margin-bottom: 28px
+    padding: 10px 0
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    font-size: 30px
+    line-height: 30px
+    font-weight: 600
+    color: $text-color_dark 
+    border-bottom: 2px solid $color-decoration
+  &__link 
+    font-size: 16px
+    line-height: 16px
+    font-weight: 600
+    color: $active-color
+
+.btn 
+  width: 290px
+  height: 40px
+  margin: 0 auto
+  display: flex 
+  align-items: center
+  justify-content: center
+  font-size: 16px
+  font-weight: 600
+  // line-height: 36px
+  // text-align: center
+  text-transform: uppercase
+  color: $text-color
+  border: 2px solid $active-color
+  &-up 
+    width: 58px
+    height: 58px
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 50%
+    border: 2px solid #ffffff 
+    object
+      width: 30px
+      height: 23px  
 
 @import 'modules/header'
 @import 'modules/news'
