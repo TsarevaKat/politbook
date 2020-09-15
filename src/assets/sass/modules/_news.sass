@@ -1,15 +1,29 @@
 .news
   &__blocks 
-    margin-bottom: 40px
+    margin-bottom: 40px 
+    max-height: calc(100% - 120px)  
+    overflow-y: auto
+    @media (min-width: $tableWidth)
+      .btn_more 
+        display: none
   &__link 
     display: block
+    color: $text-color 
+    transition: color $time
     &:not(:last-child)
       margin-bottom: 20px
     &:not(:first-child):not(:nth-child(2)):not(:nth-child(3))
       display: none
+    @media (min-width: $tableWidth)
+      &:hover 
+        cursor: pointer
+        color: $active-color
+      &:not(:first-child):not(:nth-child(2)):not(:nth-child(3))
+        display: block
   &__item 
+    margin-right: 15px
     font-size: 14px
-    font-weight: 500
+    font-weight: 500 
   &__date 
     margin-bottom: 10px
     display: block
@@ -22,4 +36,3 @@
     margin: 0
     font-weight: 500
     line-height: 20px
-    color: $text-color 
