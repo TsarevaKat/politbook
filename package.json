@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "jquery": "^3.5.1",
-    "jquery.nicescroll": "^3.7.6"
+    "jquery.nicescroll": "^3.7.6",
+    "webpack-ftp-upload-plugin": "^1.0.3"
   }
 }
