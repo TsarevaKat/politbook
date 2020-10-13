@@ -32,13 +32,12 @@ module.exports = {
           enforce: true
         }
       }
-    },
-    minimize: false
+    }
   },
   module: {
     rules: [{
       test: /\.js$/,
-      // loader: 'babel-loader',
+      loader: 'babel-loader',
       exclude: '/node_modules/'
     },
     {
@@ -122,8 +121,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${PATHS.src}/index.html`,
       filename: './index.html',
-      inject: false,
-      minify: false
+      inject: false 
     }),
     new CopyWebpackPlugin({
       patterns: [{
